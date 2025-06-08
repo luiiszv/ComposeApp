@@ -2,14 +2,11 @@
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
-    alias(libs.plugins.kotlin.compose) apply false
+    alias(libs.plugins.compose.compiler) apply false
 
-
-    //Pugin Hilt
+    // Plugin Hilt
     alias(libs.plugins.hilt) apply false
 
-    //Plugin Kps
-    alias(libs.plugins.ksp) apply false
-
-
+    // Plugin Kapt (no uses KSP si no es necesario)
+    alias(libs.plugins.kapt) apply false
 }
