@@ -4,6 +4,10 @@ plugins {
     alias(libs.plugins.kapt) // Para procesadores KAPT
     alias(libs.plugins.hilt)
     alias(libs.plugins.compose.compiler)
+
+
+
+
 }
 
 
@@ -77,5 +81,8 @@ dependencies {
     kapt(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
 
+    //Co
     implementation(libs.kotlinx.coroutines.android)
+
+
 }
