@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.composeapp.core.network.ConnectivityObserver
 import com.example.composeapp.core.network.NetworkStatus
-import com.example.composeapp.domain.model.User
-import com.example.composeapp.domain.usecase.ObtenerUsuariosUseCase
+import com.example.composeapp.domain.users.model.User
+import com.example.composeapp.domain.users.usecase.ObtenerUsuariosUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

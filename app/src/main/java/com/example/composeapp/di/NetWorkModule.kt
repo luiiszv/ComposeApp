@@ -1,6 +1,6 @@
 package com.example.composeapp.di
 
-import com.example.composeapp.data.remote.ApiService
+import com.example.composeapp.data.users.remote.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

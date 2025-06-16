@@ -1,4 +1,4 @@
-package com.example.composeapp.domain.model
+package com.example.composeapp.domain.users.model
 
 data class User(
     val id: String,
@@ -9,3 +9,5 @@ data class User(
     val creationDate: String,
     val active: Boolean,
 )
+
+//Solo Vista

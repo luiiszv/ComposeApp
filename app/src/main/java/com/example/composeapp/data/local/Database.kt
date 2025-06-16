@@ -2,8 +2,9 @@ package com.example.composeapp.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.composeapp.data.local.dao.UserDao
-import com.example.composeapp.data.local.entities.UserEntity
+import com.example.composeapp.data.auth.local.dao.AuthDao
+import com.example.composeapp.data.users.local.dao.UserDao
+import com.example.composeapp.data.users.local.entities.UserEntity
 
 
 
@@ -14,6 +15,7 @@ import com.example.composeapp.data.local.entities.UserEntity
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
+    abstract fun authDao(): AuthDao
 
 
 }

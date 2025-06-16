@@ -2,8 +2,9 @@ package com.example.composeapp.di
 
 import android.content.Context
 import androidx.room.Room
+import com.example.composeapp.data.auth.local.dao.AuthDao
 import com.example.composeapp.data.local.AppDatabase
-import com.example.composeapp.data.local.dao.UserDao
+import com.example.composeapp.data.users.local.dao.UserDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,5 +29,10 @@ object DatabaseModule {
     @Provides
     fun provideUserDao(database: AppDatabase): UserDao {
         return database.userDao()
+    }
+
+    @Provides
+    fun provideAuthDao(database: AppDatabase): AuthDao {
+        return database.authDao()
     }
 }

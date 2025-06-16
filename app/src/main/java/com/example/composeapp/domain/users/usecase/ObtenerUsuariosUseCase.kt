@@ -1,7 +1,7 @@
-package com.example.composeapp.domain.usecase
+package com.example.composeapp.domain.users.usecase
 
-import com.example.composeapp.domain.model.User
-import com.example.composeapp.domain.repository.UserRepository
+import com.example.composeapp.domain.users.model.User
+import com.example.composeapp.domain.users.repository.UserRepository
 import javax.inject.Inject
 
 class ObtenerUsuariosUseCase @Inject constructor(private val repo: UserRepository) {

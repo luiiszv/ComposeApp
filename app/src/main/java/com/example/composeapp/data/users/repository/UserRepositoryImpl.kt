@@ -1,11 +1,11 @@
-package com.example.composeapp.data.repository
+package com.example.composeapp.data.users.repository
 
-import com.example.composeapp.data.local.dao.UserDao
-import com.example.composeapp.data.mappers.toDomain
-import com.example.composeapp.data.mappers.toEntity
-import com.example.composeapp.data.remote.ApiService
-import com.example.composeapp.domain.model.User
-import com.example.composeapp.domain.repository.UserRepository
+import com.example.composeapp.data.users.local.dao.UserDao
+import com.example.composeapp.data.users.mappers.toDomain
+import com.example.composeapp.data.users.mappers.toEntity
+import com.example.composeapp.data.users.remote.ApiService
+import com.example.composeapp.domain.users.model.User
+import com.example.composeapp.domain.users.repository.UserRepository
 import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
@@ -16,11 +16,11 @@ class UserRepositoryImpl @Inject constructor(
     private val dao: UserDao //Local
 ) : UserRepository {
 
-    override suspend fun obtenerUsuarios(): List<User> {
+     override suspend fun obtenerUsuarios(): List<User> {
         return try {
-            val usuariosRemotos = api.obtenerUsuarios().map { it.toDomain() }
-            dao.insertUsers(usuariosRemotos.map { it.toEntity() })
-            usuariosRemotos
+            val usuariosRemotosDto = api.obtenerUsuarios() //List de UserDto
+            dao.insertUsers(usuariosRemotosDto.map { it.toEntity() }) //Guarda el da Db
+            usuariosRemotosDto.map { it.toDomain() } //Devolvemos limpio Dominio
         } catch (e: IOException) {
             // Error de red (sin internet, timeout, etc.)
             println("Error de red: ${e.localizedMessage}")
