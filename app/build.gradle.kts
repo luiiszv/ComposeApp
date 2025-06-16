@@ -6,8 +6,6 @@ plugins {
     alias(libs.plugins.compose.compiler)
 
 
-
-
 }
 
 
@@ -87,6 +85,8 @@ dependencies {
     //Icons
     implementation(libs.androidx.material.icons.extended)
 
+//Datasotre - Share preferences - Token
+    implementation(libs.androidx.datastore.preferences)
 
 
 }
